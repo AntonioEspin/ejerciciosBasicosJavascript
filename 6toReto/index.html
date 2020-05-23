@@ -1,0 +1,84 @@
+<!-- Reto #6 “Resta de pizzas”
+Instrucciones: llegaste a una fiesta con X cantidad de rebanadas de pizza (indicadas por el usuario), después de un rato se consumió Y cantidad de rebanadas y quedan Z. Fácil ¿cierto?
+El reto está en que expreses lo que sucede es una forma comprensible para cualquier persona, imprescindible pensar en tus usuarios 😉 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sexto reto</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .information {
+        display: flex;
+        width: 370px;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    input {
+    }
+
+    section p {
+        width: 100%;
+        font-size: 2em;
+        color: blueviolet;
+        text-align: center;
+    }
+
+    section img {
+        width: 200px;
+    }
+
+</style>
+<body>
+
+    <section id="container">
+        <h1>Cuantas rebanadas de pizza quedan? :)</h1>
+            <div class="information">
+                <h2>Rebanadas que llevaste:</h2>
+                <input type="text" name="name" id="first_number">
+            </div>
+            <div class="information">
+                <h2>Rebanadas que comieron:</h2>
+                <input type="text" name="name" id="second_number">
+            </div>
+        <button id="button">Ingresar</button>
+        <p id="parrafo"></p>
+    </section>
+    <script>
+        const button = document.getElementById('button');
+        button.addEventListener('click', getNumber)
+        const p = document.getElementById('parrafo');
+        
+        function getNumber () {
+            const first_number= document.getElementById('first_number');
+            const second_number = document.getElementById('second_number');
+            const a = parseInt(first_number.value) 
+            const b = parseInt(second_number.value);
+            const result = a - b;
+
+            p.innerHTML =  `Te quedan ${result} rebanadas`;
+        };
+        
+    </script>
+</body>
+</html>

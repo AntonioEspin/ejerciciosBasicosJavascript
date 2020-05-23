@@ -1,0 +1,81 @@
+<!-- Reto #9 “Calculando días”
+Instrucciones: escribe un programa al que le indiques una cantidad de días y como resultado deberá mostrar cuantas horas, minutos y segundos hay en dicha cantidad de días. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noveno reto</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .information {
+        display: flex;
+        width: 370px;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+
+    section p {
+        width: 100%;
+        font-size: 2em;
+        color: blueviolet;
+        text-align: center;
+    }
+
+    section img {
+        width: 200px;
+    }
+
+</style>
+<body>
+
+    <section id="container">
+        <h1>Cuanto tiempo ha pasado</h1>
+            <div class="information">
+                <h2>Cantidad de dias:</h2>
+                <input type="text" name="name" id="days">
+            </div>
+        <button id="button">Ingresar</button>
+        <p id="parrafo"></p>
+    </section>
+    <script>
+        const button = document.getElementById('button');
+        button.addEventListener('click', getNumber)
+        const p = document.getElementById('parrafo');
+        
+        function getNumber () {
+            const days= document.getElementById('days');
+            const people = document.getElementById('people');
+            const getDays = parseFloat(days.value); 
+            
+            const horas = getDays * 24;
+            const minutos = getDays * (24 * 60);
+            const segundos = getDays * (24 * 3600);
+
+            p.innerHTML =  `Han pasado ${horas} horas <br>
+                            ${minutos} minutos <br>
+                            y ${segundos} segundos`;
+        };
+        
+    </script>
+</body>
+</html>

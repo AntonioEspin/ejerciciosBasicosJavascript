@@ -1,0 +1,88 @@
+<!-- Reto #11 “Cuantas veces un número en otro”
+Instrucciones: pide al usuario ingresar un número mayor a 1000 y otro menor a 100. Indica de una forma sencilla de entender al usuario cuantas veces cabe el número menor a 100 en el número mayor a 1000 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onceavo reto</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .information {
+        display: flex;
+        width: 370px;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    input {
+    }
+
+    section p {
+        width: 100%;
+        font-size: 2em;
+        color: blueviolet;
+        text-align: center;
+    }
+
+    section img {
+        width: 200px;
+    }
+
+</style>
+<body>
+
+    <section id="container">
+        <h1>Cuanto cabe un numero dentro del otro"</h1>
+            <div class="information">
+                <h2>Ingresa un numero mayor a 1000:</h2>
+                <input type="text" name="name" id="highNumber">
+            </div>
+            <div class="information">
+                <h2>Ingresa un numero menor a 100:</h2>
+                <input type="text" name="name" id="lowNumber">
+            </div>
+        <button id="button">Ingresar</button>
+        <p id="parrafo"></p>
+    </section>
+    <script>
+        const button = document.getElementById('button');
+        button.addEventListener('click', getNumber)
+        const p = document.getElementById('parrafo');
+        
+        function getNumber () {
+            const highNumber= document.getElementById('highNumber');
+            const lowNumber = document.getElementById('lowNumber');
+            const getNumber = parseInt(highNumber.value); 
+            const getlowNumber = parseInt(lowNumber.value);
+
+            const result = getNumber / getlowNumber;
+
+            if (result === 1) {
+                p.innerHTML =  `En el numero ${getNumber} cabe ${result} numero ${getlowNumber}`;
+            } else {
+            p.innerHTML =  `En el numero ${getNumber} caben ${result} numeros ${getlowNumber}`;
+            }
+        };
+        
+    </script>
+</body>
+</html>

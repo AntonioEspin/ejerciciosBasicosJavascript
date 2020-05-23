@@ -1,0 +1,85 @@
+<!-- Reto #4 “Suma de enteros”
+Instrucciones: otro clásico conocido, donde pedirás al usuario que ingrese 2 números y muestre en pantalla el resultado. Si quieres añadir más dificultad puedes utilizar números con punto decimal y especificar el número de decimales después del punto.
+Ejemplo: 2.5633 + 5.6883 = 8.25 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Ejercicio</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 1em;
+    }
+
+    .information {
+        display: flex;
+        width: 370px;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    input {
+    }
+
+    section p {
+        width: 100%;
+        font-size: 2em;
+        color: blueviolet;
+        text-align: center;
+    }
+
+    section img {
+        width: 200px;
+    }
+
+</style>
+<body>
+
+    <section id="container">
+        <div>
+            <div class="information">
+                <h1>Ingresa primer valor:</h1>
+                <input type="text" name="name" id="first_number">
+            </div>
+            <div class="information">
+                <h1>Ingresa segundo valor:</h1>
+                <input type="text" name="name" id="second_number">
+            </div>
+        </div>
+        <button id="button">Ingresar</button>
+        <p id="parrafo"></p>
+    </section>
+    <script>
+        const button = document.getElementById('button');
+        button.addEventListener('click', getNumber)
+        const p = document.getElementById('parrafo');
+        
+        function getNumber () {
+            const first_number= document.getElementById('first_number');
+            const second_number = document.getElementById('second_number');
+            const a = parseFloat(first_number.value) 
+            const b = parseFloat(second_number.value);
+            const suma = a + b;
+
+            p.innerHTML =  `${suma.toFixed(2)}`;
+        };
+        
+    </script>
+</body>
+</html>

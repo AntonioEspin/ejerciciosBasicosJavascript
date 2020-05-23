@@ -1,0 +1,68 @@
+<!-- Reto #1 “Hola Mundo”
+Instrucciones: este es un clásico de clásicos, pero haremos un pequeño cambio. En lugar de solo imprimir un mensaje en pantalla, pedirás al usuario que digite un nombre y mostrarás en pantalla lo siguiente: Hola, [nombre] -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Ejercicio</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input {
+        margin-bottom: 15px;
+    }
+
+    section p {
+        font-size: 3em;
+        color: blueviolet;
+    }
+
+    section img {
+        width: 200px;
+    }
+
+</style>
+<body>
+
+    <section id="container">
+        <h1>Ingresa tu nombre:</h1>
+        <input type="text" name="name" id="input">
+        <button id="button">Ingresar</button>
+        <p id="parrafo"></p>
+        <img id="imagen" alt="">
+    </section>
+    <script>
+        const button = document.getElementById('button');
+        button.addEventListener('click', userName)
+        const p = document.getElementById('parrafo')
+        const url = './images/WIN_20200518_08_53_28_Pro.jpg'
+        const img = document.getElementById('imagen')
+        
+        function userName () {
+            const input = document.getElementById('input');
+            const name = input.value
+            // alert(`Hola ${name}`)
+            p.innerHTML =  `Hola ${name}`;
+
+            if(input.value == 'negra' || input.value == 'Negra'){
+                img.setAttribute('src', url )
+            } 
+        };
+        
+    </script>
+</body>
+</html>

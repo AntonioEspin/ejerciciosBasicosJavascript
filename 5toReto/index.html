@@ -1,0 +1,90 @@
+<!-- Reto #5 “Suma y multiplicación”
+Instrucciones: añadiendo un extra al reto anterior ahora el usuario ingresará 3 números, sumarás los 2 primeros y el resultado será multiplicado por el tercero. Añade las consideraciones del punto decimal del reto anterior.
+Ejemplo: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Ejercicio</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .information {
+        display: flex;
+        width: 370px;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    input {
+    }
+
+    section p {
+        width: 100%;
+        font-size: 2em;
+        color: blueviolet;
+        text-align: center;
+    }
+
+    section img {
+        width: 200px;
+    }
+
+</style>
+<body>
+
+    <section id="container">
+        <h1>Sumaré los dos primeros valores y el resultado lo multiplicaré por el tercer valor :)</h1>
+            <div class="information">
+                <h2>Ingresa primer valor:</h2>
+                <input type="text" name="name" id="first_number">
+            </div>
+            <div class="information">
+                <h2>Ingresa segundo valor:</h2>
+                <input type="text" name="name" id="second_number">
+            </div>
+            <div class="information">
+                <h2>Ingresa tercer valor:</h2>
+                <input type="text" name="name" id="third_number">
+            </div>
+        <button id="button">Ingresar</button>
+        <p id="parrafo"></p>
+    </section>
+    <script>
+        const button = document.getElementById('button');
+        button.addEventListener('click', getNumber)
+        const p = document.getElementById('parrafo');
+        
+        function getNumber () {
+            const first_number= document.getElementById('first_number');
+            const second_number = document.getElementById('second_number');
+            const third_number = document.getElementById('third_number');
+            const a = parseFloat(first_number.value) 
+            const b = parseFloat(second_number.value);
+            const c = parseFloat(third_number.value);
+            const result = (a + b) * c;
+
+            p.innerHTML =  `${result.toFixed(2)}`;
+        };
+        
+    </script>
+</body>
+</html>

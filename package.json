@@ -1,0 +1,16 @@
+{
+  "name": "ejercicios-javascript",
+  "version": "1.0.0",
+  "description": "Ejercicios basicos en javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "ejercicios",
+    "basico"
+  ],
+  "author": "Antonio Espin",
+  "license": "MIT"
+}
